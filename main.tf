@@ -11,15 +11,14 @@ module "aws_account" {
 
   name  = each.value["name"]
   email = each.value["email"]
-  # ou_id = lookup(module.aws_organizational_units.ids, try(each.value["ou"], ""), null)
-
   ou_id = can(each.value["ou"]) ? module.aws_organizational_units.ids["${each.value["ou"]}"] : null
 
-  # iam_user_access_to_billing            = lookup(each.values, "iam_user_access_to_billing", true)
-  # organization_account_access_role_name = lookup(each.values, "organization_account_access_role_name", "OrganizationAccountAccessRole")
-  # contact_information = lookup(each.value, "contact_information", null)
-  # alternate_contacts  = lookup(each.value, "alternate_contacts", {})
-  # tags = {}
+  iam_user_access_to_billing            = try(each.value["iam_user_access_to_billing"], false)
+  organization_account_access_role_name = try(each.value["organization_account_access_role_name"], null)
+  close_on_deletion                     = try(each.value["close_on_deletion"], true)
+  contact_information                   = try(each.value["contact_information"], null)
+  alternate_contacts                    = try(each.value["alternate_contacts"], {})
+  tags                                  = try(each.value["tags"], null)
 
   depends_on = [
     module.aws_organizational_units

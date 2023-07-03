@@ -33,4 +33,7 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-**/tests/*
+# Terraform directories and files in examples
+**/examples/*/.terraform
+**/examples/*/.terraform-version
+**/examples/*/*.lock.hcl

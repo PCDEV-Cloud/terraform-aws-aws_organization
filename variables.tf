@@ -9,27 +9,27 @@ variable "organizational_units" {
     # level 1
     {
       name = string
-      tags = optional(map(string))
+      tags = optional(map(string), {})
       children = optional(list(object(
         # level 2
         {
           name = string
-          tags = optional(map(string))
+          tags = optional(map(string), {})
           children = optional(list(object(
             # level 3
             {
               name = string
-              tags = optional(map(string))
+              tags = optional(map(string), {})
               children = optional(list(object(
                 # level 4
                 {
                   name = string
-                  tags = optional(map(string))
+                  tags = optional(map(string), {})
                   children = optional(list(object(
                     # level 5
                     {
                       name = string
-                      tags = optional(map(string))
+                      tags = optional(map(string), {})
                     }
                   )))
                 }

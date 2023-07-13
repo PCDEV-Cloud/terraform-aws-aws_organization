@@ -18,7 +18,8 @@ resource "aws_organizations_account" "this" {
   tags                       = var.tags
 
   lifecycle {
-    ignore_changes = [role_name]
+    ignore_changes  = [role_name]
+    prevent_destroy = var.prevent_destroy
   }
 }
 

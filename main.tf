@@ -1,12 +1,12 @@
-module "aws_organizational_units" {
-  source = "./modules/aws_organizational_units"
+module "organizational_units" {
+  source = "./modules/organizational_units"
 
   organization_root_id = var.organization_root_id
   organizational_units = var.organizational_units
 }
 
-module "aws_account" {
-  source   = "./modules/aws_account"
+module "account" {
+  source   = "./modules/account"
   for_each = local.accounts
 
   name  = each.value["name"]

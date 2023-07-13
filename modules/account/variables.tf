@@ -42,8 +42,8 @@ variable "close_on_deletion" {
 }
 
 variable "prevent_destroy" {
-  type = bool
-  default = false
+  type        = bool
+  default     = false
   description = "Prevent accidental deletion of AWS account."
 }
 

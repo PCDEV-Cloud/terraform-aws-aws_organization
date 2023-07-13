@@ -1,15 +1,11 @@
 provider "aws" {
-  region = local.region
+  region = "eu-west-1"
 }
 
 data "aws_organizations_organization" "example" {}
 
-locals {
-  region = "eu-west-1"
-}
-
-module "aws_account" {
-  source = "../../"
+module "account" {
+  source = "../../modules/account"
 
   name  = "BillingToolingProd"
   email = "billing-tooling-prod@my-company.pl"

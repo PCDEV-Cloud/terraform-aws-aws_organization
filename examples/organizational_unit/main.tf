@@ -1,13 +1,9 @@
 provider "aws" {
-  region = local.region
-}
-
-locals {
   region = "eu-west-1"
 }
 
-module "aws_organizational_units" {
-  source = "../../"
+module "organizational_units" {
+  source = "../../modules/organizational_units"
 
   organizational_units = [
     {

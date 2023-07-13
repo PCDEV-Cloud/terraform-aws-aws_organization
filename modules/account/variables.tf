@@ -41,12 +41,6 @@ variable "close_on_deletion" {
   description = "If true, a deletion event will close the account. If set to false, it will only remove from organization."
 }
 
-variable "prevent_destroy" {
-  type        = bool
-  default     = false
-  description = "Prevent accidental deletion of AWS account."
-}
-
 variable "tags" {
   type        = map(string)
   default     = {}

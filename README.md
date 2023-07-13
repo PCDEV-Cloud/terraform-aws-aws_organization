@@ -1,5 +1,14 @@
 # AWS Organization Terraform module
 
+## Requirements
+1. AWS Organization must be created. For details on creating AWS Organization, see [Creating and configuring an organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tutorials_basic.html#tutorial-orgs-step1) tutorial.
+2. AWS Account Management service must be enabled. Read more in the [Using AWS Organizations with other AWS services](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html) guide.
+
+## Features
+1. Create member accounts in AWS Organization.
+2. Set primary and alternate contacts on member accounts.
+3. Create organizational units (OU).
+
 ## Usage
 
 ```hcl

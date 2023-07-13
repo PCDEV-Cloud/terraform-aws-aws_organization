@@ -1,5 +1,5 @@
 output "organizational_unit_ids" {
-  value       = module.aws_organizational_units.ids
+  value       = module.organizational_units.ids
   description = "description"
 }
 

@@ -1,17 +1,17 @@
-module "aws_organizational_units" {
-  source = "./modules/aws_organizational_units"
+module "organizational_units" {
+  source = "./modules/organizational_units"
 
   organization_root_id = var.organization_root_id
   organizational_units = var.organizational_units
 }
 
-module "aws_account" {
-  source   = "./modules/aws_account"
+module "account" {
+  source   = "./modules/account"
   for_each = local.accounts
 
   name  = each.value["name"]
   email = each.value["email"]
-  ou_id = can(each.value["ou"]) ? module.aws_organizational_units.ids["${each.value["ou"]}"] : null
+  ou_id = can(each.value["ou"]) ? module.organizational_units.ids["${each.value["ou"]}"] : null
 
   iam_user_access_to_billing            = try(each.value["iam_user_access_to_billing"], false)
   organization_account_access_role_name = try(each.value["organization_account_access_role_name"], null)
@@ -21,6 +21,6 @@ module "aws_account" {
   tags                                  = try(each.value["tags"], null)
 
   depends_on = [
-    module.aws_organizational_units
+    module.organizational_units
   ]
 }

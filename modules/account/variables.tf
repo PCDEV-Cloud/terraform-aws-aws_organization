@@ -4,7 +4,7 @@
 
 variable "name" {
   type        = string
-  description = ""
+  description = "Name for the member account."
 
   validation {
     condition     = can(regex("^[\\w]{1}([\\w\\s/_-]{0,1}[\\w]{1}){1,31}$", var.name))
@@ -14,37 +14,37 @@ variable "name" {
 
 variable "email" {
   type        = string
-  description = ""
+  description = "Email address to assign to the new member account. Email address must be unique, not already associated with another account."
 }
 
 variable "ou_id" {
   type        = string
   default     = null
-  description = ""
+  description = "Organizational Unit ID where the member account is to be created."
 }
 
 variable "iam_user_access_to_billing" {
   type        = bool
   default     = true
-  description = ""
+  description = "If true, the new account enables IAM users and roles to access account billing information."
 }
 
 variable "organization_account_access_role_name" {
   type        = string
   default     = "OrganizationAccountAccessRole"
-  description = "description"
+  description = "The name of an IAM role that organization automatically preconfigures in the new member account."
 }
 
 variable "close_on_deletion" {
   type        = bool
   default     = true
-  description = ""
+  description = "If true, a deletion event will close the account. If set to false, it will only remove from organization."
 }
 
 variable "tags" {
   type        = map(string)
   default     = {}
-  description = ""
+  description = "Key-value map of resource tags."
 }
 
 ################################################################################
@@ -69,7 +69,7 @@ variable "contact_information" {
     }
   )
   default     = null
-  description = ""
+  description = "Sets the specified primary contact information associated with the account."
 }
 
 ################################################################################
@@ -86,7 +86,7 @@ variable "alternate_contacts" {
     }
   ))
   default     = {}
-  description = ""
+  description = "Sets the specified alternate contacts attached to the account. It allows to set up a billing, operations and security contacts."
 
   validation {
     condition     = alltrue([for i, k in var.alternate_contacts : contains(["billing", "operations", "security"], i)])

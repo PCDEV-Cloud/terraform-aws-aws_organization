@@ -1,19 +1,14 @@
-provider "aws" {
-  region = local.region
-}
+# account
 
-data "aws_organizations_organization" "example" {}
+## Usage
 
-locals {
-  region = "eu-west-1"
-}
-
+```hcl
 module "aws_account" {
-  source = "../../"
+  source = "github.com/PCDEV-Cloud/terraform-aws-aws_organization//modules/account"
 
   name  = "BillingToolingProd"
   email = "billing-tooling-prod@my-company.pl"
-  ou_id = data.aws_organizations_organization.example.roots[0].id
+  ou_id = "<OU-ID-HERE>"
 
   contact_information = {
     full_name      = "John Doe"
@@ -34,7 +29,7 @@ module "aws_account" {
       email_address = "john.doe@my-company.pl"
       phone_number  = "+48 654654654"
     }
-
+    
     operations = {
       name          = "John Doe"
       title         = "Operations Manager"
@@ -50,3 +45,4 @@ module "aws_account" {
     }
   }
 }
+```

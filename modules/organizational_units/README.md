@@ -1,13 +1,10 @@
-provider "aws" {
-  region = local.region
-}
+# organizational_units
 
-locals {
-  region = "eu-west-1"
-}
+## Usage
 
+```hcl
 module "aws_organizational_units" {
-  source = "../../"
+  source = "github.com/PCDEV-Cloud/terraform-aws-aws_organization//modules/organizational_units"
 
   organizational_units = [
     {
@@ -26,3 +23,4 @@ module "aws_organizational_units" {
     }
   ]
 }
+```

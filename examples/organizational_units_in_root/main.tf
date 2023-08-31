@@ -19,6 +19,7 @@ module "organizational_units" {
         { name = "Prod" },
         { name = "SDLC" }
       ]
-    }
+    },
+    { name = "Projects" }
   ]
 }

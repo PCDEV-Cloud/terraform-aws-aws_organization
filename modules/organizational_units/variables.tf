@@ -42,3 +42,9 @@ variable "organization_root_id" {
   default     = null
   description = "ID of the root of organization. If not provided, the ID of root of the default provider will be used."
 }
+
+variable "parent_id" {
+  type        = string
+  default     = null
+  description = ""
+}

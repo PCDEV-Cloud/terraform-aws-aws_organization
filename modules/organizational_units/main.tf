@@ -1,5 +1,3 @@
-data "aws_organizations_organization" "this" {}
-
 resource "aws_organizations_organizational_unit" "level_1" {
   for_each  = local.level_1
   name      = each.value["name"]

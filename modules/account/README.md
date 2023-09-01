@@ -1,5 +1,7 @@
 # account
 
+Creates member account in AWS organization and sets primary and alternate contacts.
+
 ## Usage
 
 ```hcl
@@ -46,3 +48,7 @@ module "aws_account" {
   }
 }
 ```
+
+## Examples
+
+- [account](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/account) - Creates a member account

@@ -1,11 +1,11 @@
 # AWS Organization Terraform module
 
 ## Requirements
-1. AWS Organization must be created. For details on creating AWS Organization, see [Creating and configuring an organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tutorials_basic.html#tutorial-orgs-step1) tutorial.
+1. AWS organization must be created. For details on creating AWS organization, see [Creating and configuring an organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tutorials_basic.html#tutorial-orgs-step1) tutorial.
 2. AWS Account Management service must be enabled. Read more in the [Using AWS Organizations with other AWS services](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html) guide.
 
 ## Features
-1. Create member accounts in AWS Organization.
+1. Create member accounts in AWS organization.
 2. Set primary and alternate contacts on member accounts.
 3. Create organizational units (OU).
 
@@ -74,3 +74,10 @@ module "aws_organization" {
   ]
 }
 ```
+
+## Examples
+
+- [complete](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/complete) - Creates a set of organizational units and member accounts
+- [account](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/account) - Creates a member account
+- [organizational-units-in-root](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units-in-root) - Creates organizational units in the root of AWS organization
+- [organizational-units-in-parent-ou](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units-in-parent-ou) - Creates organizational units within another organizational unit

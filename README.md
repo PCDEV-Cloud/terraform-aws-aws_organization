@@ -7,7 +7,7 @@
 ## Features
 1. Create member accounts in AWS organization.
 2. Set primary and alternate contacts on member accounts.
-3. Create organizational units (OU).
+3. Create organizational units (OU) in root or any other organizational unit.
 
 ## Usage
 

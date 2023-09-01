@@ -1,6 +1,6 @@
 # organizational_units
 
-Creates organizational units (OU) in the AWS organization.
+Creates organizational units (OU) in the AWS organization root or any other organizational unit.
 
 ## Usage
 

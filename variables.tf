@@ -1,7 +1,13 @@
 variable "organization_root_id" {
   type        = string
   default     = null
-  description = "ID of the root of organization. If not provided, the ID of root of the default provider will be used."
+  description = "(Deprecated) ID of the root of organization. If not provided, the ID of root of the default provider will be used. Use the parent_id instead."
+}
+
+variable "parent_id" {
+  type        = string
+  default     = null
+  description = "The ID of the parent OU where organizational units to be created. If not provided, the ID of root will be used."
 }
 
 variable "organizational_units" {

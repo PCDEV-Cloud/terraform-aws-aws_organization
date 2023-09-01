@@ -1,6 +1,6 @@
 # account
 
-Creates member accounts in AWS organization and sets primary and alternate contacts.
+Creates member account in AWS organization and sets primary and alternate contacts.
 
 ## Usage
 

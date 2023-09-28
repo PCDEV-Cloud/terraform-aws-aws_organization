@@ -20,8 +20,14 @@ variable "email" {
 variable "ou_id" {
   type        = string
   default     = null
-  description = "Organizational Unit ID where the member account is to be created."
+  description = "(Deprecated) Use the 'parent_id' instead of this."
 }
+
+variable "parent_id" {
+  type        = string
+  description = "The ID of the parent OU where the member account is to be created."
+}
+
 
 variable "iam_user_access_to_billing" {
   type        = bool

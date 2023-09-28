@@ -7,9 +7,9 @@ data "aws_organizations_organization" "example" {}
 module "account" {
   source = "../../modules/account"
 
-  name  = "BillingToolingProd"
-  email = "billing-tooling-prod@my-company.pl"
-  ou_id = data.aws_organizations_organization.example.roots[0].id
+  name      = "BillingToolingProd"
+  email     = "billing-tooling-prod@my-company.pl"
+  parent_id = data.aws_organizations_organization.example.roots[0].id
 
   contact_information = {
     full_name      = "John Doe"

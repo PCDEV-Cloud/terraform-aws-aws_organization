@@ -1,17 +1,17 @@
-data "aws_organizations_organization" "this" {}
+# data "aws_organizations_organization" "this" {}
 
 ################################################################################
 # Account
 ################################################################################
 
-locals {
-  organization_root_id = data.aws_organizations_organization.this.roots[0].id
-}
+# locals {
+#   organization_root_id = data.aws_organizations_organization.this.roots[0].id
+# }
 
 resource "aws_organizations_account" "this" {
   name                       = var.name
   email                      = var.email
-  parent_id                  = coalesce(var.ou_id, local.organization_root_id)
+  parent_id                  = var.parent_id
   iam_user_access_to_billing = var.iam_user_access_to_billing ? "ALLOW" : "DENY"
   role_name                  = var.organization_account_access_role_name
   close_on_deletion          = var.close_on_deletion

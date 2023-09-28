@@ -1,5 +1,9 @@
 # AWS Organization Terraform module
 
+> [!IMPORTANT]
+> Since version v1.2.0, the variables `parent_id` in 'account' and 'organizational_units' submodules and `organization_root_id` in the root module are required.
+> Review your code and complete the required variables before updating the module.
+
 ## Requirements
 1. AWS organization must be created. For details on creating AWS organization, see [Creating and configuring an organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tutorials_basic.html#tutorial-orgs-step1) tutorial.
 2. AWS Account Management service must be enabled. Read more in the [Using AWS Organizations with other AWS services](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html) guide.

@@ -1,7 +1,7 @@
 # AWS Organization Terraform module
 
 > [!IMPORTANT]
-> Since version v1.2.0, the variables `parent_id` in 'account' and 'organizational_units' submodules and `organization_root_id` in the root module are required.
+> Since version `v1.2.0`, variables `parent_id` in 'account' and 'organizational_units' submodules and `organization_root_id` in the root module are required.
 > Review your code and complete the required variables before updating the module.
 
 ## Requirements

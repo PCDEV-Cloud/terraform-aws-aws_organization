@@ -1,7 +1,6 @@
 variable "organization_root_id" {
   type        = string
-  default     = null
-  description = "ID of the root of organization. If not provided, the ID of root of the default provider will be used."
+  description = "ID of the root of organization."
 }
 
 variable "organizational_units" {

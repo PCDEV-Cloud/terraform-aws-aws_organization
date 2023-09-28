@@ -39,6 +39,7 @@ variable "organizational_units" {
       )))
     }
   ))
+  default     = []
   description = "A list of Organizational Units with their children. Maximum nesting is limited to 5 levels."
 }
 

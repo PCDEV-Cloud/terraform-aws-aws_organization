@@ -1,10 +1,10 @@
 # organizational_units
 
-Creates organizational units (OU) in the AWS organization root or any other organizational unit.
-
 > [!IMPORTANT]
 > Since version `v1.2.0`, variable `parent_id` is required.
 > Review your code and complete the required variables before updating the module.
+
+Creates organizational units (OU) in the AWS organization root or any other organizational unit.
 
 ## Usage
 

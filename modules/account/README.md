@@ -2,6 +2,10 @@
 
 Creates member account in AWS organization and sets primary and alternate contacts.
 
+> [!IMPORTANT]
+> Since version `v1.2.0`, variable `parent_id` is required.
+> Review your code and complete the required variables before updating the module.
+
 ## Usage
 
 ```hcl

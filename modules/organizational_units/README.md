@@ -31,5 +31,4 @@ module "aws_organizational_units" {
 
 ## Examples
 
-- [organizational-units-in-root](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units-in-root) - Creates organizational units in the root of AWS organization
-- [organizational-units-in-parent-ou](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units-in-parent-ou) - Creates organizational units within another organizational unit
+- [organizational-units](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units) - Creates organizational units

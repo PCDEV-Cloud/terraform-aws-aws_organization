@@ -54,3 +54,45 @@ variable "accounts" {
   default     = []
   description = "A list of member accounts with settings."
 }
+
+variable "services" {
+  type = object({
+    account_management            = optional(bool, false)
+    application_migration_service = optional(bool, false)
+    artifact                      = optional(bool, false)
+    audit_manager                 = optional(bool, false)
+    backup                        = optional(bool, false)
+    cloudformation_stacksets      = optional(bool, false)
+    cloudtrail                    = optional(bool, false)
+    compute_optimizer             = optional(bool, false)
+    config                        = optional(bool, false)
+    control_tower                 = optional(bool, false)
+    detective                     = optional(bool, false)
+    devops_guru                   = optional(bool, false)
+    directory_service             = optional(bool, false)
+    firewall_manager              = optional(bool, false)
+    guardduty                     = optional(bool, false)
+    health                        = optional(bool, false)
+    access_analyzer               = optional(bool, false)
+    inspector                     = optional(bool, false)
+    license_manager               = optional(bool, false)
+    macie                         = optional(bool, false)
+    marketplace                   = optional(bool, false)
+    network_manager               = optional(bool, false)
+    resource_access_manager       = optional(bool, false)
+    security_hub                  = optional(bool, false)
+    s3_storage_lens               = optional(bool, false)
+    security_lake                 = optional(bool, false)
+    service_catalog               = optional(bool, false)
+    service_quotas                = optional(bool, false)
+    iam_identity_center           = optional(bool, false)
+    systems_manager               = optional(bool, false)
+    tag_policies                  = optional(bool, false)
+    trusted_advisor               = optional(bool, false)
+    well_architected_tool         = optional(bool, false)
+    vpc_ip_address_manager        = optional(bool, false)
+    vpc_reachability_analyzer     = optional(bool, false)
+    all                           = optional(bool, false)
+  })
+  default = {}
+}

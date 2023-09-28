@@ -5,6 +5,10 @@ provider "aws" {
 module "aws_organization" {
   source = "../../"
 
+  services = {
+    account_management = true
+  }
+
   organizational_units = [
     {
       name = "Security"

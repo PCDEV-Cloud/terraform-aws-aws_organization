@@ -1,3 +1,10 @@
+resource "aws_organizations_organization" "this" {
+  count = length(local.services) > 0 ? 1 : 0
+
+  aws_service_access_principals = local.services
+  feature_set                   = "ALL"
+}
+
 module "organizational_units" {
   source = "./modules/organizational_units"
 

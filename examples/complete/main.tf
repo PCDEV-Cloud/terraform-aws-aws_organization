@@ -2,8 +2,12 @@ provider "aws" {
   region = "eu-west-1"
 }
 
+data "aws_organizations_organization" "example" {}
+
 module "aws_organization" {
   source = "../../"
+
+  organization_root_id = data.aws_organizations_organization.example.roots[0].id
 
   organizational_units = [
     {

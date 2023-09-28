@@ -1,13 +1,6 @@
 variable "organization_root_id" {
   type        = string
-  default     = null
-  description = "(Deprecated) ID of the root of organization. If not provided, the ID of root of the default provider will be used. Use the parent_id instead."
-}
-
-variable "parent_id" {
-  type        = string
-  default     = null
-  description = "The ID of the parent OU where organizational units to be created. If not provided, the ID of root will be used."
+  description = "ID of the root of organization."
 }
 
 variable "organizational_units" {
@@ -46,6 +39,7 @@ variable "organizational_units" {
       )))
     }
   ))
+  default     = []
   description = "A list of Organizational Units with their children. Maximum nesting is limited to 5 levels."
 }
 

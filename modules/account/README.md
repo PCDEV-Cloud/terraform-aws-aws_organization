@@ -1,5 +1,9 @@
 # account
 
+> [!IMPORTANT]
+> Since version `v1.2.0`, variable `parent_id` is required.
+> Review your code and complete the required variables before updating the module.
+
 Creates member account in AWS organization and sets primary and alternate contacts.
 
 ## Usage
@@ -8,9 +12,9 @@ Creates member account in AWS organization and sets primary and alternate contac
 module "aws_account" {
   source = "github.com/PCDEV-Cloud/terraform-aws-aws_organization//modules/account"
 
-  name  = "BillingToolingProd"
-  email = "billing-tooling-prod@my-company.pl"
-  ou_id = "<OU-ID-HERE>"
+  name      = "BillingToolingProd"
+  email     = "billing-tooling-prod@my-company.pl"
+  parent_id = "<OU-ID-HERE>"
 
   contact_information = {
     full_name      = "John Doe"

@@ -1,5 +1,9 @@
 # organizational_units
 
+> [!IMPORTANT]
+> Since version `v1.2.0`, variable `parent_id` is required.
+> Review your code and complete the required variables before updating the module.
+
 Creates organizational units (OU) in the AWS organization root or any other organizational unit.
 
 ## Usage
@@ -7,6 +11,8 @@ Creates organizational units (OU) in the AWS organization root or any other orga
 ```hcl
 module "aws_organizational_units" {
   source = "github.com/PCDEV-Cloud/terraform-aws-aws_organization//modules/organizational_units"
+
+  parent_id = "<OU-ID-HERE>"
 
   organizational_units = [
     {
@@ -29,5 +35,4 @@ module "aws_organizational_units" {
 
 ## Examples
 
-- [organizational-units-in-root](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units-in-root) - Creates organizational units in the root of AWS organization
-- [organizational-units-in-parent-ou](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units-in-parent-ou) - Creates organizational units within another organizational unit
+- [organizational-units](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units) - Creates organizational units

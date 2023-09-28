@@ -1,5 +1,9 @@
 # AWS Organization Terraform module
 
+> [!IMPORTANT]
+> Since version `v1.2.0`, variables `parent_id` in 'account' and 'organizational_units' submodules and `organization_root_id` in the root module are required.
+> Review your code and complete the required variables before updating the module.
+
 ## Requirements
 1. AWS organization must be created. For details on creating AWS organization, see [Creating and configuring an organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tutorials_basic.html#tutorial-orgs-step1) tutorial.
 2. AWS Account Management service must be enabled. Read more in the [Using AWS Organizations with other AWS services](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html) guide.
@@ -14,6 +18,8 @@
 ```hcl
 module "aws_organization" {
   source = "github.com/PCDEV-Cloud/terraform-aws-aws_organization"
+
+  organization_root_id = "<ROOT-OU-ID-HERE>"
 
   organizational_units = [
     {
@@ -79,5 +85,4 @@ module "aws_organization" {
 
 - [complete](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/complete) - Creates a set of organizational units and member accounts
 - [account](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/account) - Creates a member account
-- [organizational-units-in-root](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units-in-root) - Creates organizational units in the root of AWS organization
-- [organizational-units-in-parent-ou](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units-in-parent-ou) - Creates organizational units within another organizational unit
+- [organizational-units](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units) - Creates organizational units

@@ -8,9 +8,9 @@ Creates member account in AWS organization and sets primary and alternate contac
 module "aws_account" {
   source = "github.com/PCDEV-Cloud/terraform-aws-aws_organization//modules/account"
 
-  name  = "BillingToolingProd"
-  email = "billing-tooling-prod@my-company.pl"
-  ou_id = "<OU-ID-HERE>"
+  name      = "BillingToolingProd"
+  email     = "billing-tooling-prod@my-company.pl"
+  parent_id = "<OU-ID-HERE>"
 
   contact_information = {
     full_name      = "John Doe"

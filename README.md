@@ -15,6 +15,8 @@
 module "aws_organization" {
   source = "github.com/PCDEV-Cloud/terraform-aws-aws_organization"
 
+  organization_root_id = "<ROOT-OU-ID-HERE>"
+
   organizational_units = [
     {
       name = "Security"
@@ -79,5 +81,4 @@ module "aws_organization" {
 
 - [complete](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/complete) - Creates a set of organizational units and member accounts
 - [account](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/account) - Creates a member account
-- [organizational-units-in-root](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units-in-root) - Creates organizational units in the root of AWS organization
-- [organizational-units-in-parent-ou](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units-in-parent-ou) - Creates organizational units within another organizational unit
+- [organizational-units](https://github.com/PCDEV-Cloud/terraform-aws-aws_organization/tree/main/examples/organizational-units) - Creates organizational units
